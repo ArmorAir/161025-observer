@@ -16,5 +16,8 @@ package utils
 		
 		public static const PHOTO_COVER:int = 200;
 		
+		
+		public static const DRAG_OFFSET_Y:int = 110;
+		
 	}
 }

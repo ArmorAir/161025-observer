@@ -1,8 +1,10 @@
 package AA
 {
+	import flash.geom.Point;
 	import flash.ui.Keyboard;
 	
 	import AA.observe.Flicker_StateAA;
+	import AA.observe.SwipeIcon_StateAA;
 	
 	import Lv_0.events.AEvent;
 	
@@ -10,6 +12,7 @@ package AA
 	
 	import Lv_2.display.AAFacade;
 	import Lv_2.display.ImageAA;
+	import Lv_2.display.NodeAA;
 	import Lv_2.display.StateAA;
 	import Lv_2.display.effects.TintEffectAA;
 	
@@ -17,32 +20,32 @@ package AA
 	
 public class ObserverB_StateAA extends StateAA
 {
-//	public function ObserverB_StateAA( hasPhoto:Boolean )
-//	{
-//		super();
-//		
-//		if(hasPhoto){
-//			this.____doAddPhoto();
-//		}
-//	}
-	
+	public function ObserverB_StateAA( startIconCoord:Point = null )
+	{
+		m_startIconCoord = startIconCoord;
+	}
 	
 	override public function onEnter():void {
 		var img:ImageAA;
+		var node:NodeAA;
 		
 		img = new ImageAA;
 		img.textureId = "bg/bg_A.png";
 		this.getFusion().addNode(img);
 		
 		
-		img = new ImageAA;
-		img.textureId = "connected/img_A.png";
-		this.getFusion().addNode(img);
-		img.pivotX = img.getSourceWidth() / 2;
-		img.pivotY = img.getSourceHeight() / 2;
-		img.x = ViewConfig.SETTING_X;
-		img.y = ViewConfig.SETTING_Y;
-		img.eventClick().addListener(onSettingB);
+//		img = new ImageAA;
+//		img.textureId = "connected/img_A.png";
+//		this.getFusion().addNode(img);
+//		img.pivotX = img.getSourceWidth() / 2;
+//		img.pivotY = img.getSourceHeight() / 2;
+//		img.x = ViewConfig.SETTING_X;
+//		img.y = ViewConfig.SETTING_Y;
+		
+		m_iconState = new SwipeIcon_StateAA(m_startIconCoord);
+		m_icon = this.getMorph().createSubMorph(m_iconState).getNode();
+		this.getFusion().addNode(m_icon);
+		m_icon.eventClick().addListener(onSettingB);
 		
 		
 		
@@ -70,11 +73,14 @@ public class ObserverB_StateAA extends StateAA
 	
 	
 	private var m_photo:ImageAA;
+	private var m_icon:NodeAA;
+	private var m_iconState:SwipeIcon_StateAA;
+	private var m_startIconCoord:Point;
 	
 	
 	
 	private function onSettingB(e:AEvent):void{
-		AAFacade.getInstance().getRoot().switchTo(new SettingB_StateAA);
+		AAFacade.getInstance().getRoot().switchTo(new SettingB_StateAA(m_icon.x, m_icon.y, m_iconState.isLeft()));
 	}
 	
 	

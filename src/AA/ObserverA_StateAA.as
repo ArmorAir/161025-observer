@@ -1,8 +1,10 @@
 package AA
 {
+	import flash.geom.Point;
 	import flash.ui.Keyboard;
 	
 	import AA.observe.Flicker_StateAA;
+	import AA.observe.SwipeIcon_StateAA;
 	
 	import Lv_0.events.AEvent;
 	
@@ -10,6 +12,7 @@ package AA
 	
 	import Lv_2.display.AAFacade;
 	import Lv_2.display.ImageAA;
+	import Lv_2.display.NodeAA;
 	import Lv_2.display.StateAA;
 	import Lv_2.display.effects.TintEffectAA;
 	
@@ -17,20 +20,17 @@ package AA
 	
 public class ObserverA_StateAA extends StateAA
 {
-//	public function ObserverA_StateAA( hasPhoto:Boolean )
-//	{
-//		super();
-//		
-//		if(hasPhoto){
-//			this.____doAddPhoto();
-//		}
-//	}
+	public function ObserverA_StateAA( startIconCoord:Point = null )
+	{
+		m_startIconCoord = startIconCoord;
+	}
 	
 	public static const STARY_Y:int = 120;
 	
 	
 	override public function onEnter():void {
 		var img:ImageAA;
+		var node:NodeAA;
 		
 		img = new ImageAA;
 		img.textureId = "bg/bg_A.png";
@@ -46,15 +46,22 @@ public class ObserverA_StateAA extends StateAA
 		this.getFusion().addNode(img);
 		img.x = (this.getWindow().windowWidth - img.getSourceWidth())/2;
 		img.y = STARY_Y + 18;
+//		
+//		img = new ImageAA;
+//		img.textureId = "connected/img_A.png";
+//		this.getFusion().addNode(img);
+//		img.pivotX = img.getSourceWidth() / 2;
+//		img.pivotY = img.getSourceHeight() / 2;
+//		img.x = ViewConfig.SETTING_X;
+//		img.y = ViewConfig.SETTING_Y;
+//		img.eventClick().addListener(onSettingA);
+//		
+		m_iconState = new SwipeIcon_StateAA(m_startIconCoord);
+		m_icon = this.getMorph().createSubMorph(m_iconState).getNode();
+		this.getFusion().addNode(m_icon);
 		
-		img = new ImageAA;
-		img.textureId = "connected/img_A.png";
-		this.getFusion().addNode(img);
-		img.pivotX = img.getSourceWidth() / 2;
-		img.pivotY = img.getSourceHeight() / 2;
-		img.x = ViewConfig.SETTING_X;
-		img.y = ViewConfig.SETTING_Y;
-		img.eventClick().addListener(onSettingA);
+		m_icon.eventClick().addListener(onSettingA);
+		
 		
 		img = new ImageAA;
 		img.textureId = "connected/shot.png";
@@ -77,11 +84,15 @@ public class ObserverA_StateAA extends StateAA
 	
 	
 	private var m_photo:ImageAA;
+	private var m_icon:NodeAA;
+	private var m_iconState:SwipeIcon_StateAA;
+	
+	private var m_startIconCoord:Point;
 	
 	
 	
 	private function onSettingA(e:AEvent):void{
-		AAFacade.getInstance().getRoot().switchTo(new SettingA_StateAA);
+		AAFacade.getInstance().getRoot().switchTo(new SettingA_StateAA(m_icon.x, m_icon.y, m_iconState.isLeft()));
 	}
 	
 	private function onFlicker(e:AEvent):void{

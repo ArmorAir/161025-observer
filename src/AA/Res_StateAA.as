@@ -24,7 +24,7 @@ public class Res_StateAA extends StateAA {
 		AY = new <String>["bg/bg_A.png", "bg/mask.png"];
 		am.addBundle(new FilesBundle(AY),   new TextureAA_BundleHandler(1.0, false));
 		
-		AY = new <String>["entry/A.png", "entry/B.png", "entry/circle.png", "entry/img.png", "entry/text_A.png", "entry/text_B.png"];
+		AY = new <String>["entry/A.png", "entry/B.png", "entry/circle.png", "entry/img.png", "entry/img_A.png", "entry/text_A.png", "entry/text_B.png"];
 		am.addBundle(new FilesBundle(AY),   new TextureAA_BundleHandler(1.0, false));
 		
 		AY = new <String>["QRcode/btn.png", "QRcode/img.png", "QRcode/img_B.png", "QRcode/text_A.png"];

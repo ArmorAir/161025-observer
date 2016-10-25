@@ -11,11 +11,11 @@ package AA.entry
 	import Lv_2.display.StateAA;
 	import AA.comp.Img2_StateAA;
 
-public class EntryPanel_StateAA extends StateAA
+public class EntryPanel_A_StateAA extends StateAA
 {
 	
 	public static const BTN_OFFSET_X:int = 225;
-	public static const BTN_Y:int = 810;
+	public static const BTN_Y:int = 810 + 300;
 	
 	override public function onEnter():void {
 		var img:ImageAA;
@@ -23,21 +23,21 @@ public class EntryPanel_StateAA extends StateAA
 		
 		
 		_bg = new ImageAA;
-		_bg.textureId = "entry/img.png";
+		_bg.textureId = "entry/img_A.png";
 		this.getFusion().addNode(_bg);
 		
 		
 		
 		this.getFusion().pivotX = _bg.getSourceWidth() / 2;
 		this.getFusion().x = this.getWindow().windowWidth / 2;
-		this.getFusion().y = 400;
+		this.getFusion().y = 320;
 		
 		
 		img = new ImageAA;
 		img.textureId = "entry/text_B.png";
 		this.getFusion().addNode(img);
 		img.x = (_bg.getSourceWidth() - img.getSourceWidth())/2;
-		img.y = 620;
+		img.y = 890;
 		
 		
 		
@@ -57,11 +57,11 @@ public class EntryPanel_StateAA extends StateAA
 		
 		
 		
-		img = new ImageAA;
-		img.textureId = "entry/text_A.png";
-		this.getFusion().addNode(img);
-		img.x = (_bg.getSourceWidth() - img.getSourceWidth())/2;
-		img.y = 1030;
+//		img = new ImageAA;
+//		img.textureId = "entry/text_A.png";
+//		this.getFusion().addNode(img);
+//		img.x = (_bg.getSourceWidth() - img.getSourceWidth())/2;
+//		img.y = 1030;
 	}
 	
 	private var _bg:ImageAA;

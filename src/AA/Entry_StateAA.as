@@ -1,6 +1,5 @@
 package AA {
-	import AA.comp.Img2_StateAA;
-	import AA.entry.EntryPanel_StateAA;
+	import AA.entry.EntryPanel_A_StateAA;
 	
 	import Lv_2.display.ImageAA;
 	import Lv_2.display.NodeAA;
@@ -21,7 +20,7 @@ public class Entry_StateAA extends StateAA {
 		img.textureId = "bg/mask.png";
 		this.getFusion().addNode(img);
 		
-		this.getFusion().addNode(this.getMorph().createSubMorph(new EntryPanel_StateAA).getNode());
+		this.getFusion().addNode(this.getMorph().createSubMorph(new EntryPanel_A_StateAA).getNode());
 		
 	}
 	

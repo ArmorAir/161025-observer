@@ -40,7 +40,7 @@ public class Scan_StateAA extends StateAA
 		_line = new ImageAA;
 		_line.textureId = "scan/line.png";
 		this.getFusion().addNode(_line);
-		_line.x = (this.getWindow().windowWidth - _line.getSourceWidth())/2 + 16;
+		_line.x = (this.getWindow().windowWidth - _line.getSourceWidth())/2 + 5;
 		_line.y = START_Y;
 		_line.touchable =false;
 		

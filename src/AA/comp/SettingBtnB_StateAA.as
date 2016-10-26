@@ -21,7 +21,7 @@ package AA.comp
 			this.getFusion().addNode(img);
 			img.pivotX = img.getSourceWidth() / 2;
 			img.pivotY = img.getSourceHeight() / 2;
-			img.effect = new TintEffectAA(0xdd3333);
+//			img.effect = new TintEffectAA(0xdd3333);
 			
 			
 			img = new ImageAA;

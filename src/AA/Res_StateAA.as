@@ -29,10 +29,10 @@ public class Res_StateAA extends StateAA {
 				"entry/A.png", 
 				"entry/B.png", 
 				"entry/circle.png",
-				"entry/img.png",
+//				"entry/img.png",
 				"entry/img_A.png", 
 				"entry/text_A.png", 
-				"entry/text_B.png",
+//				"entry/text_B.png",
 				"entry/install.png"
 			];
 		am.addBundle(new FilesBundle(AY),   new TextureAA_BundleHandler(1.0, false));
@@ -68,7 +68,8 @@ public class Res_StateAA extends StateAA {
 				"setting/text_C.png",
 				"setting/text_D.png",
 				"setting/toggle.png",
-				"setting/frame.png"
+				"setting/frame.png",
+				"setting/frame_A.png"
 			];
 		am.addBundle(new FilesBundle(AY),   new TextureAA_BundleHandler(1.0, false));
 		

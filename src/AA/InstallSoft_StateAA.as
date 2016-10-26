@@ -8,6 +8,7 @@ package AA
 	
 	import Lv_2.display.AAFacade;
 	import Lv_2.display.ImageAA;
+	import Lv_2.display.NodeAA;
 	import Lv_2.display.StateAA;
 	
 public class InstallSoft_StateAA extends StateAA
@@ -33,6 +34,7 @@ public class InstallSoft_StateAA extends StateAA
 		img.y = 60;
 //		img.alpha = 0.3;
 		img.visible = false;
+		
 		img.eventClick().addListener(onBack);
 		
 	}

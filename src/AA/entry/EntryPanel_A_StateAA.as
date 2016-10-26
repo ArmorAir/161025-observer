@@ -8,6 +8,7 @@ package AA.entry
 	import Lv_0.events.AEvent;
 	
 	import Lv_2.display.AAFacade;
+	import Lv_2.display.FusionAA;
 	import Lv_2.display.ImageAA;
 	import Lv_2.display.NodeAA;
 	import Lv_2.display.StateAA;
@@ -15,8 +16,8 @@ package AA.entry
 public class EntryPanel_A_StateAA extends StateAA
 {
 	
-	public static const BTN_OFFSET_X:int = 200;
-	public static const BTN_Y:int = 810 + 300;
+	public static const BTN_OFFSET_X:int = 220;
+	public static const BTN_Y:int = 810 + 360;
 	
 	override public function onEnter():void {
 		var img:ImageAA;
@@ -31,14 +32,14 @@ public class EntryPanel_A_StateAA extends StateAA
 		
 		this.getFusion().pivotX = _bg.getSourceWidth() / 2;
 		this.getFusion().x = this.getWindow().windowWidth / 2;
-		this.getFusion().y = 320;
+		this.getFusion().y = 270;
 		
 		
-		img = new ImageAA;
-		img.textureId = "entry/text_B.png";
-		this.getFusion().addNode(img);
-		img.x = (_bg.getSourceWidth() - img.getSourceWidth())/2;
-		img.y = 870;
+//		img = new ImageAA;
+//		img.textureId = "entry/text_B.png";
+//		this.getFusion().addNode(img);
+//		img.x = (_bg.getSourceWidth() - img.getSourceWidth())/2;
+//		img.y = 870;
 		
 		
 		
@@ -57,17 +58,31 @@ public class EntryPanel_A_StateAA extends StateAA
 		node.eventClick().addListener(onClientB);
 		
 		
+		_installFN= new FusionAA;
+		this.getFusion().addNode(_installFN);
+		_installFN.x = _bg.getSourceWidth()/2;
+		_installFN.y = 965;
 		
 		img = new ImageAA;
 		img.textureId = "entry/text_A.png";
-		this.getFusion().addNode(img);
-		img.x = (_bg.getSourceWidth() - img.getSourceWidth())/2;
-		img.y = 920;
-		img.eventClick().addListener(onInstallSoft);
+		img.pivotX = img.getSourceWidth()/2;
+		img.pivotY = img.getSourceHeight()/2;
+		_installFN.addNode(img);
+		
+		img = new ImageAA;
+		img.textureId = "entry/text_A.png";
+		img.pivotX = img.getSourceWidth()/2;
+		img.pivotY = img.getSourceHeight()/2;
+		img.scaleX = 600 / img.getSourceWidth();
+		img.scaleY = 95 / img.getSourceHeight();
+		img.visible = false;
+		_installFN.addNode(img);
+		
+		_installFN.eventClick().addListener(onInstallSoft);
 	}
 	
 	private var _bg:ImageAA;
-	
+	private var _installFN:FusionAA;
 
 
 	private function onClientA(e:AEvent):void{

@@ -65,7 +65,7 @@ package AA
 			node.eventClick().addListener(onBack);
 			
 			
-			node = this.getMorph().createSubMorph(new SettingBtnB_StateAA("setting/frame.png", "setting/text_D.png", 0)).getNode();
+			node = this.getMorph().createSubMorph(new SettingBtnB_StateAA("setting/frame_A.png", "setting/text_D.png", 0)).getNode();
 			fusion.addNode(node);
 			if(_isLeft){
 				node.x = 390;

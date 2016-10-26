@@ -20,7 +20,7 @@ package utils
 		public static const PHOTO_COVER_1:int = 227;
 		public static const PHOTO_COVER_2:int = 198;
 		
-		public static const DRAG_OFFSET_Y:int = 110 - 12;
+		public static const DRAG_OFFSET_Y:int = 220;
 		
 		
 		public static const ALBUM_BTN_OFFSET_X:int = 380;

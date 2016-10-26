@@ -70,7 +70,7 @@ package AA
 			node.y = - 93;
 			
 			
-			node = this.getMorph().createSubMorph(new SettingBtnB_StateAA("setting/frame.png", "setting/text_D.png", -65)).getNode();
+			node = this.getMorph().createSubMorph(new SettingBtnB_StateAA("setting/frame_A.png", "setting/text_D.png", -65)).getNode();
 			fusion.addNode(node);
 			if(_isLeft){
 				node.x = 390;

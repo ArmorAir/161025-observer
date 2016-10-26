@@ -24,7 +24,17 @@ public class Res_StateAA extends StateAA {
 		AY = new <String>["bg/bg_A.png", "bg/mask.png"];
 		am.addBundle(new FilesBundle(AY),   new TextureAA_BundleHandler(1.0, false));
 		
-		AY = new <String>["entry/A.png", "entry/B.png", "entry/circle.png", "entry/img.png", "entry/img_A.png", "entry/text_A.png", "entry/text_B.png"];
+		AY = new <String>
+			[
+				"entry/A.png", 
+				"entry/B.png", 
+				"entry/circle.png",
+				"entry/img.png",
+				"entry/img_A.png", 
+				"entry/text_A.png", 
+				"entry/text_B.png",
+				"entry/install.png"
+			];
 		am.addBundle(new FilesBundle(AY),   new TextureAA_BundleHandler(1.0, false));
 		
 		AY = new <String>["QRcode/btn.png", "QRcode/img.png", "QRcode/img_B.png", "QRcode/text_A.png"];
@@ -36,7 +46,10 @@ public class Res_StateAA extends StateAA {
 		AY = new <String>
 			[	"connected/color.png", 
 				"connected/img_A.png", 
+				"connected/img_B.png", 
+				"connected/img_C.png", 
 				"connected/text_A.png",
+				"connected/tip.png",
 				"connected/photo.png", 
 				"connected/shot.png"];
 		am.addBundle(new FilesBundle(AY),   new TextureAA_BundleHandler(1.0, false));
@@ -51,14 +64,22 @@ public class Res_StateAA extends StateAA {
 				"setting/img_3.png",
 				"setting/mask.png", 
 				"setting/text_A.png",
-				"setting/text_B.png"
+				"setting/text_B.png",
+				"setting/text_C.png",
+				"setting/text_D.png",
+				"setting/toggle.png",
+				"setting/frame.png"
 			];
 		am.addBundle(new FilesBundle(AY),   new TextureAA_BundleHandler(1.0, false));
 		
 		AY = new <String>
 			[	"photo/photo_A.png", 
 				"photo/s9w.png",
-				"photo/s9b.png"
+				"photo/s9b.png",
+				"photo/bg_1.png", 
+				"photo/bg_2.png",
+				"photo/btn_1.png", 
+				"photo/btn_2.png",
 			];
 		am.addBundle(new FilesBundle(AY),   new TextureAA_BundleHandler(1.0, false));
 		

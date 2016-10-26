@@ -2,8 +2,9 @@ package AA
 {
 	import flash.geom.Point;
 	
-	import AA.comp.Img2Label_StateAA;
 	import AA.comp.Img2_StateAA;
+	import AA.comp.SettingBtnA_StateAA;
+	import AA.comp.SettingBtnB_StateAA;
 	
 	import Lv_0.events.AEvent;
 	
@@ -12,8 +13,6 @@ package AA
 	import Lv_2.display.ImageAA;
 	import Lv_2.display.NodeAA;
 	import Lv_2.display.StateAA;
-	
-	import utils.ViewConfig;
 
 	public class SettingB_StateAA extends StateAA
 	{
@@ -38,14 +37,14 @@ package AA
 			var fusion:FusionAA;
 			
 			img = new ImageAA;
-			img.textureId = "setting/blurBg.png";
-			this.getFusion().addNode(img);
-			
-			
-			img = new ImageAA;
-			img.textureId = "setting/mask.png";
+			img.textureId = "bg/bg_A.png";
 			this.getFusion().addNode(img);
 			img.eventClick().addListener(onBack);
+			
+//			img = new ImageAA;
+//			img.textureId = "setting/mask.png";
+//			this.getFusion().addNode(img);
+//			img.eventClick().addListener(onBack);
 			
 			
 			
@@ -55,31 +54,31 @@ package AA
 			fusion.y = _dragY;
 			
 			
-			node = this.getMorph().createSubMorph(new Img2_StateAA("setting/btn_1.png", "setting/img_1.png")).getNode();
+			node = this.getMorph().createSubMorph(new Img2_StateAA("connected/img_A.png", "connected/img_C.png")).getNode();
 			fusion.addNode(node);
 			node.eventClick().addListener(onBack);
 			
 			
-			node = this.getMorph().createSubMorph(new Img2Label_StateAA("setting/btn_2.png", "setting/img_2.png", "setting/text_B.png", _isLeft)).getNode();
+			node = this.getMorph().createSubMorph(new SettingBtnA_StateAA("setting/frame.png", "setting/text_C.png", "setting/toggle.png")).getNode();
 			fusion.addNode(node);
 			if(_isLeft){
-				node.x = 260;
+				node.x = 390;
 			}
 			else {
-				node.x = -400;
+				node.x = -390;
 			}
-			node.y = - 120;
+			node.y = - 93;
 			
 			
-			node = this.getMorph().createSubMorph(new Img2Label_StateAA("setting/btn_3.png", "setting/img_3.png", "setting/text_A.png", _isLeft)).getNode();
+			node = this.getMorph().createSubMorph(new SettingBtnB_StateAA("setting/frame.png", "setting/text_D.png", -65)).getNode();
 			fusion.addNode(node);
 			if(_isLeft){
-				node.x = 260;
+				node.x = 390;
 			}
 			else {
-				node.x = -400;
+				node.x = -390;
 			}
-			node.y = 120;
+			node.y = 93;
 			node.eventClick().addListener(onReset);
 			
 		}

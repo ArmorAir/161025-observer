@@ -1,7 +1,9 @@
 package AA.entry
 {
+	import AA.InstallSoft_StateAA;
 	import AA.QRcode_StateAA;
 	import AA.Scan_StateAA;
+	import AA.comp.Img2_StateAA;
 	
 	import Lv_0.events.AEvent;
 	
@@ -9,12 +11,11 @@ package AA.entry
 	import Lv_2.display.ImageAA;
 	import Lv_2.display.NodeAA;
 	import Lv_2.display.StateAA;
-	import AA.comp.Img2_StateAA;
 
 public class EntryPanel_A_StateAA extends StateAA
 {
 	
-	public static const BTN_OFFSET_X:int = 225;
+	public static const BTN_OFFSET_X:int = 200;
 	public static const BTN_Y:int = 810 + 300;
 	
 	override public function onEnter():void {
@@ -37,7 +38,7 @@ public class EntryPanel_A_StateAA extends StateAA
 		img.textureId = "entry/text_B.png";
 		this.getFusion().addNode(img);
 		img.x = (_bg.getSourceWidth() - img.getSourceWidth())/2;
-		img.y = 890;
+		img.y = 870;
 		
 		
 		
@@ -57,11 +58,12 @@ public class EntryPanel_A_StateAA extends StateAA
 		
 		
 		
-//		img = new ImageAA;
-//		img.textureId = "entry/text_A.png";
-//		this.getFusion().addNode(img);
-//		img.x = (_bg.getSourceWidth() - img.getSourceWidth())/2;
-//		img.y = 1030;
+		img = new ImageAA;
+		img.textureId = "entry/text_A.png";
+		this.getFusion().addNode(img);
+		img.x = (_bg.getSourceWidth() - img.getSourceWidth())/2;
+		img.y = 920;
+		img.eventClick().addListener(onInstallSoft);
 	}
 	
 	private var _bg:ImageAA;
@@ -74,6 +76,10 @@ public class EntryPanel_A_StateAA extends StateAA
 	
 	private function onClientB(e:AEvent):void{
 		AAFacade.getInstance().getRoot().switchTo(new Scan_StateAA);
+	}
+	
+	private function onInstallSoft(e:AEvent):void{
+		AAFacade.getInstance().getRoot().switchTo(new InstallSoft_StateAA);
 	}
 	
 }

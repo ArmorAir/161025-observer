@@ -25,9 +25,6 @@ public class ObserverA_StateAA extends StateAA
 		m_startIconCoord = startIconCoord;
 	}
 	
-	public static const STARY_Y:int = 120;
-	
-	
 	override public function onEnter():void {
 		var img:ImageAA;
 		var node:NodeAA;
@@ -37,15 +34,15 @@ public class ObserverA_StateAA extends StateAA
 		this.getFusion().addNode(img);
 		
 		img = new ImageAA;
-		img.textureId = "connected/color.png";
+		img.textureId = "connected/tip.png";
 		this.getFusion().addNode(img);
-		img.y = STARY_Y;
+		img.y = ViewConfig.TIP_STARY_Y;
 		
-		img = new ImageAA;
-		img.textureId = "connected/text_A.png";
-		this.getFusion().addNode(img);
-		img.x = (this.getWindow().windowWidth - img.getSourceWidth())/2;
-		img.y = STARY_Y + 18;
+//		img = new ImageAA;
+//		img.textureId = "connected/text_A.png";
+//		this.getFusion().addNode(img);
+//		img.x = (this.getWindow().windowWidth - img.getSourceWidth())/2;
+//		img.y = ViewConfig.TIP_STARY_Y + 18;
 //		
 //		img = new ImageAA;
 //		img.textureId = "connected/img_A.png";

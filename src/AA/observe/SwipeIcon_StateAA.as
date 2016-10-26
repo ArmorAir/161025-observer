@@ -35,7 +35,7 @@ public class SwipeIcon_StateAA extends StateAA
 	
 	
 	override public function onEnter():void {
-		
+		var img:ImageAA;
 		var sg:LongPressGesture;
 		
 		img = new ImageAA;
@@ -43,6 +43,13 @@ public class SwipeIcon_StateAA extends StateAA
 		this.getFusion().addNode(img);
 		img.pivotX = img.getSourceWidth() / 2;
 		img.pivotY = img.getSourceHeight() / 2;
+		
+		img = new ImageAA;
+		img.textureId = "connected/img_B.png";
+		this.getFusion().addNode(img);
+		img.pivotX = img.getSourceWidth() / 2;
+		img.pivotY = img.getSourceHeight() / 2;
+		img.touchable = false;
 		
 		if(m_startIconCoord){
 			this.getFusion().x = m_startIconCoord.x;
@@ -57,7 +64,7 @@ public class SwipeIcon_StateAA extends StateAA
 			this.getFusion().y = ViewConfig.SETTING_Y;
 		}
 		
-		img.eventPress().addListener(onPressIcon);
+		this.getFusion().eventPress().addListener(onPressIcon);
 		
 //		sg = new LongPressGesture;
 //		sg.setDelay(0.3);
@@ -74,9 +81,8 @@ public class SwipeIcon_StateAA extends StateAA
 	
 	
 	
-	private var img:ImageAA;
 	private var _tween:ATween;
-	private var _isMoving:Boolean;
+	private var _movingCount:int;
 	private var _isLeft:Boolean = true;
 	
 	private var m_startIconCoord:Point;
@@ -90,7 +96,7 @@ public class SwipeIcon_StateAA extends StateAA
 		var touch:Touch;
 		var list:Vector.<Touch>;
 		
-		touch = img.eventPress().getTouch();
+		touch = this.getFusion().eventPress().getTouch();
 //		trace("sss");
 		
 //		sg = e.getTarget() as LongPressGesture;
@@ -107,14 +113,15 @@ public class SwipeIcon_StateAA extends StateAA
 		var touch:Touch;
 		
 		touch = e.getTarget() as Touch;
-		if(!_isMoving) {
-			_isMoving = true;
+		if(++_movingCount==4) {
 			this.getFusion().touchable = false;
 			touch.unbinding();
 		}
+		if(_movingCount >= 4) {
+			_tween = TweenMachine.to(this.getFusion(), 0.1, {x:touch.getX(), y:touch.getY()});
+			_tween.easing = Quad.easeOut;
+		}
 		
-		_tween = TweenMachine.to(this.getFusion(), 0.1, {x:touch.getX(), y:touch.getY()});
-		_tween.easing = Quad.easeOut;
 //		this.getFusion().x = touch.getX();
 //		this.getFusion().y = touch.getY();
 	}
@@ -139,7 +146,7 @@ public class SwipeIcon_StateAA extends StateAA
 		else if(node.y >= this.getWindow().windowHeight - ViewConfig.DRAG_OFFSET_Y){
 			_tween = TweenMachine.to(this.getFusion(), 0.15, {y:this.getWindow().windowHeight - ViewConfig.DRAG_OFFSET_Y});
 		}
-		_isMoving = false;
+		_movingCount = 0;
 	}
 	
 	private function onSwipeTweenComplete():void{

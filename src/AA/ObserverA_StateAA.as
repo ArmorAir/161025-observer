@@ -4,6 +4,7 @@ package AA
 	import flash.ui.Keyboard;
 	
 	import AA.observe.Flicker_StateAA;
+	import AA.observe.ObserveTip_StateAA;
 	import AA.observe.SwipeIcon_StateAA;
 	
 	import Lv_0.events.AEvent;
@@ -33,10 +34,14 @@ public class ObserverA_StateAA extends StateAA
 		img.textureId = "bg/bg_A.png";
 		this.getFusion().addNode(img);
 		
-		img = new ImageAA;
-		img.textureId = "connected/tip.png";
-		this.getFusion().addNode(img);
-		img.y = ViewConfig.TIP_STARY_Y;
+//		img = new ImageAA;
+//		img.textureId = "connected/tip.png";
+//		this.getFusion().addNode(img);
+//		img.y = ViewConfig.TIP_STARY_Y;
+		
+		node = this.getMorph().createSubMorph(new ObserveTip_StateAA).getNode();
+		this.getFusion().addNode(node);
+		node.y = ViewConfig.TIP_STARY_Y;
 		
 //		img = new ImageAA;
 //		img.textureId = "connected/text_A.png";

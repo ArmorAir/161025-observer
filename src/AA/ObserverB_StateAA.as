@@ -34,6 +34,12 @@ public class ObserverB_StateAA extends StateAA
 		this.getFusion().addNode(img);
 		
 		
+		img = new ImageAA;
+		img.textureId = "observe/text_1.png";
+		this.getFusion().addNode(img);
+		img.x = (this.getWindow().windowWidth - img.getSourceWidth())/2;
+		img.y = 1550;
+		
 //		img = new ImageAA;
 //		img.textureId = "connected/img_A.png";
 //		this.getFusion().addNode(img);

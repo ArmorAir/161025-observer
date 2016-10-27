@@ -33,6 +33,10 @@ public class Res_StateAA extends StateAA {
 				"entry/img_A.png", 
 				"entry/text_A.png", 
 //				"entry/text_B.png",
+				"entry/text_C.png",
+				"entry/bg_A.png", 
+				"entry/rect.png", 
+				"entry/rect_A.png", 
 				"entry/install.png"
 			];
 		am.addBundle(new FilesBundle(AY),   new TextureAA_BundleHandler(1.0, false));
@@ -81,6 +85,17 @@ public class Res_StateAA extends StateAA {
 				"photo/bg_2.png",
 				"photo/btn_1.png", 
 				"photo/btn_2.png",
+			];
+		am.addBundle(new FilesBundle(AY),   new TextureAA_BundleHandler(1.0, false));
+		
+		AY = new <String>
+			[	"observe/btn_1.png", 
+				"observe/btn_2.png",
+				"observe/btn_A.png",
+				"observe/btn_B.png", 
+				"observe/bg_A.png",
+				"observe/img_A.png",
+				"observe/text_1.png"
 			];
 		am.addBundle(new FilesBundle(AY),   new TextureAA_BundleHandler(1.0, false));
 		

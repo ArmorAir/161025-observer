@@ -1,5 +1,5 @@
 package AA {
-	import AA.entry.EntryPanel_A_StateAA;
+	import AA.entry.EntryPanel_B_StateAA;
 	
 	import Lv_2.display.ImageAA;
 	import Lv_2.display.NodeAA;
@@ -13,14 +13,14 @@ public class Entry_StateAA extends StateAA {
 		var node:NodeAA;
 		
 		img = new ImageAA;
-		img.textureId = "bg/bg_A.png";
+		img.textureId = "entry/rect.png";
 		this.getFusion().addNode(img);
 		
 		img = new ImageAA;
-		img.textureId = "bg/mask.png";
+		img.textureId = "entry/bg_A.png";
 		this.getFusion().addNode(img);
 		
-		this.getFusion().addNode(this.getMorph().createSubMorph(new EntryPanel_A_StateAA).getNode());
+		this.getFusion().addNode(this.getMorph().createSubMorph(new EntryPanel_B_StateAA).getNode());
 		
 	}
 	

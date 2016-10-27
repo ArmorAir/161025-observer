@@ -30,7 +30,7 @@ public class InstallSoft_StateAA extends StateAA
 		img = new ImageAA;
 		img.textureId = "setting/frame.png";
 		this.getFusion().addNode(img);
-		img.x = -70;
+		img.x = -120;
 		img.y = 60;
 //		img.alpha = 0.3;
 		img.visible = false;

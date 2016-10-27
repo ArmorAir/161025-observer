@@ -2,9 +2,9 @@ package AA
 {
 	import flash.geom.Point;
 	
-	import AA.comp.Img2Label_StateAA;
-	import AA.comp.Img2_StateAA;
+	import AA.comp.Img1_StateAA;
 	import AA.comp.SettingBtnB_StateAA;
+	import AA.observe.ObserveTip_StateAA;
 	
 	import Lv_0.events.AEvent;
 	
@@ -42,11 +42,13 @@ package AA
 //			img.textureId = "setting/mask.png";
 //			this.getFusion().addNode(img);
 			
-			img = new ImageAA;
-			img.textureId = "connected/tip.png";
-			this.getFusion().addNode(img);
-			img.y = ViewConfig.TIP_STARY_Y;
-			img.touchable =false;
+//			img = new ImageAA;
+//			img.textureId = "connected/tip.png";
+//			this.getFusion().addNode(img);
+			node = this.getMorph().createSubMorph(new ObserveTip_StateAA).getNode();
+			this.getFusion().addNode(node);
+			node.y = ViewConfig.TIP_STARY_Y;
+			node.touchable =false;
 			
 //			img = new ImageAA;
 //			img.textureId = "connected/text_A.png";
@@ -60,12 +62,14 @@ package AA
 			fusion.x = _dragX;
 			fusion.y = _dragY;
 			
-			node = this.getMorph().createSubMorph(new Img2_StateAA("connected/img_A.png", "connected/img_C.png")).getNode();
+//			node = this.getMorph().createSubMorph(new Img2_StateAA("connected/img_A.png", "connected/img_C.png")).getNode();
+			node = this.getMorph().createSubMorph(new Img1_StateAA("observe/btn_2.png")).getNode();
 			fusion.addNode(node);
 			node.eventClick().addListener(onBack);
 			
 			
-			node = this.getMorph().createSubMorph(new SettingBtnB_StateAA("setting/frame_A.png", "setting/text_D.png", 0)).getNode();
+//			node = this.getMorph().createSubMorph(new SettingBtnB_StateAA("setting/frame_A.png", "setting/text_D.png", 0)).getNode();
+			node = this.getMorph().createSubMorph(new Img1_StateAA("observe/btn_A.png")).getNode();
 			fusion.addNode(node);
 			if(_isLeft){
 				node.x = 390;

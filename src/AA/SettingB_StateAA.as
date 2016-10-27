@@ -2,6 +2,7 @@ package AA
 {
 	import flash.geom.Point;
 	
+	import AA.comp.Img1_StateAA;
 	import AA.comp.Img2_StateAA;
 	import AA.comp.SettingBtnA_StateAA;
 	import AA.comp.SettingBtnB_StateAA;
@@ -54,12 +55,14 @@ package AA
 			fusion.y = _dragY;
 			
 			
-			node = this.getMorph().createSubMorph(new Img2_StateAA("connected/img_A.png", "connected/img_C.png")).getNode();
+//			node = this.getMorph().createSubMorph(new Img2_StateAA("connected/img_A.png", "connected/img_C.png")).getNode();
+			node = this.getMorph().createSubMorph(new Img1_StateAA("observe/btn_2.png")).getNode();
 			fusion.addNode(node);
 			node.eventClick().addListener(onBack);
 			
 			
-			node = this.getMorph().createSubMorph(new SettingBtnA_StateAA("setting/frame.png", "setting/text_C.png", "setting/toggle.png")).getNode();
+//			node = this.getMorph().createSubMorph(new SettingBtnA_StateAA("setting/frame.png", "setting/text_C.png", "setting/toggle.png")).getNode();
+			node = this.getMorph().createSubMorph(new Img1_StateAA("observe/btn_A.png")).getNode();
 			fusion.addNode(node);
 			if(_isLeft){
 				node.x = 390;
@@ -67,19 +70,20 @@ package AA
 			else {
 				node.x = -390;
 			}
-			node.y = - 93;
-			
-			
-			node = this.getMorph().createSubMorph(new SettingBtnB_StateAA("setting/frame_A.png", "setting/text_D.png", -65)).getNode();
-			fusion.addNode(node);
-			if(_isLeft){
-				node.x = 390;
-			}
-			else {
-				node.x = -390;
-			}
-			node.y = 93;
+//			node.y = - 93;
 			node.eventClick().addListener(onReset);
+			
+//			node = this.getMorph().createSubMorph(new SettingBtnB_StateAA("setting/frame_A.png", "setting/text_D.png", -65)).getNode();
+			node = this.getMorph().createSubMorph(new Img1_StateAA("observe/btn_B.png")).getNode();
+			fusion.addNode(node);
+			if(_isLeft){
+				node.x = 390;
+			}
+			else {
+				node.x = -390;
+			}
+			node.y = 185;
+			
 			
 		}
 		

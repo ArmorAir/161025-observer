@@ -39,17 +39,17 @@ public class SwipeIcon_StateAA extends StateAA
 		var sg:LongPressGesture;
 		
 		img = new ImageAA;
-		img.textureId = "connected/img_A.png";
+		img.textureId = "observe/btn_1.png";
 		this.getFusion().addNode(img);
 		img.pivotX = img.getSourceWidth() / 2;
 		img.pivotY = img.getSourceHeight() / 2;
 		
-		img = new ImageAA;
-		img.textureId = "connected/img_B.png";
-		this.getFusion().addNode(img);
-		img.pivotX = img.getSourceWidth() / 2;
-		img.pivotY = img.getSourceHeight() / 2;
-		img.touchable = false;
+//		img = new ImageAA;
+//		img.textureId = "connected/img_B.png";
+//		this.getFusion().addNode(img);
+//		img.pivotX = img.getSourceWidth() / 2;
+//		img.pivotY = img.getSourceHeight() / 2;
+//		img.touchable = false;
 		
 		if(m_startIconCoord){
 			this.getFusion().x = m_startIconCoord.x;
@@ -113,11 +113,11 @@ public class SwipeIcon_StateAA extends StateAA
 		var touch:Touch;
 		
 		touch = e.getTarget() as Touch;
-		if(++_movingCount==4) {
+		if(++_movingCount==5) {
 			this.getFusion().touchable = false;
 			touch.unbinding();
 		}
-		if(_movingCount >= 4) {
+		if(_movingCount >= 5) {
 			_tween = TweenMachine.to(this.getFusion(), 0.1, {x:touch.getX(), y:touch.getY()});
 			_tween.easing = Quad.easeOut;
 		}

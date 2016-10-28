@@ -88,7 +88,7 @@ package AA
 		}
 		
 		private function onBack(e:AEvent):void{
-			AAFacade.getInstance().getRoot().switchTo(new ObserverB_StateAA(new Point(_dragX, _dragY)));
+			AAFacade.getInstance().getRoot().switchTo(new ObserverB_StateAA(false, new Point(_dragX, _dragY)));
 		}
 		
 		private function onReset(e:AEvent):void{

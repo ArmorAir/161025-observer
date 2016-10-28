@@ -4,6 +4,7 @@ package AA
 	import flash.ui.Keyboard;
 	
 	import AA.observe.Flicker_StateAA;
+	import AA.observe.ObserverB_alert_StateAA;
 	import AA.observe.SwipeIcon_StateAA;
 	
 	import Lv_0.events.AEvent;
@@ -20,25 +21,33 @@ package AA
 	
 public class ObserverB_StateAA extends StateAA
 {
-	public function ObserverB_StateAA( startIconCoord:Point = null )
+	public function ObserverB_StateAA( hasAlert:Boolean, startIconCoord:Point = null  )
 	{
 		m_startIconCoord = startIconCoord;
+		_hasAlert = hasAlert;
 	}
 	
 	override public function onEnter():void {
 		var img:ImageAA;
 		var node:NodeAA;
+		var 
 		
 		img = new ImageAA;
 		img.textureId = "bg/bg_A.png";
 		this.getFusion().addNode(img);
 		
 		
-		img = new ImageAA;
-		img.textureId = "observe/text_1.png";
-		this.getFusion().addNode(img);
-		img.x = (this.getWindow().windowWidth - img.getSourceWidth())/2;
-		img.y = 1550;
+//		img = new ImageAA;
+//		img.textureId = "observe/text_1.png";
+//		this.getFusion().addNode(img);
+//		img.x = (this.getWindow().windowWidth - img.getSourceWidth())/2;
+//		img.y = 1550;
+		
+		if(_hasAlert){
+			node = this.getMorph().createSubMorph(new ObserverB_alert_StateAA).getNode();
+			this.getFusion().addNode(node);
+			
+		}
 		
 //		img = new ImageAA;
 //		img.textureId = "connected/img_A.png";
@@ -82,6 +91,9 @@ public class ObserverB_StateAA extends StateAA
 	private var m_icon:NodeAA;
 	private var m_iconState:SwipeIcon_StateAA;
 	private var m_startIconCoord:Point;
+	
+	private var _hasAlert:Boolean;
+	
 	
 	
 	

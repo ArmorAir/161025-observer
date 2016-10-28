@@ -84,7 +84,7 @@ public class Scan_StateAA extends StateAA
 	}
 	
 	private function onObserveB(e:AEvent):void{
-		AAFacade.getInstance().getRoot().switchTo(new ObserverB_StateAA());
+		AAFacade.getInstance().getRoot().switchTo(new ObserverB_StateAA(true));
 	}
 }
 }

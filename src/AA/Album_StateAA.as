@@ -124,7 +124,7 @@ package AA
 				AAFacade.getInstance().getRoot().switchTo(new ObserverA_StateAA());
 			}
 			else {
-				AAFacade.getInstance().getRoot().switchTo(new ObserverB_StateAA());
+				AAFacade.getInstance().getRoot().switchTo(new ObserverB_StateAA(true));
 			}
 		}
 

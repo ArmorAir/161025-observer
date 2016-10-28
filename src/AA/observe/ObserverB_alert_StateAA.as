@@ -24,7 +24,7 @@ package AA.observe
 			_alert.x = (this.getWindow().windowWidth - _alert.getSourceWidth())/2;
 			_alert.y = 1550;
 			
-			tween = TweenMachine.to(_alert, 0.75, {alpha:0}, 1.8);
+			tween = TweenMachine.to(_alert, 0.55, {alpha:0}, 1.85);
 			tween.easing = Quad.easeOut;
 			tween.onComplete = ____onAlertHide;
 			

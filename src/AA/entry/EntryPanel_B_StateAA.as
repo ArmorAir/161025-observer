@@ -3,7 +3,7 @@ package AA.entry
 	import AA.InstallSoft_StateAA;
 	import AA.QRcode_StateAA;
 	import AA.Scan_StateAA;
-	import AA.comp.Img2_StateAA;
+	import AA.comp.Img1_StateAA;
 	
 	import Lv_0.events.AEvent;
 	
@@ -18,8 +18,8 @@ public class EntryPanel_B_StateAA extends StateAA
 	
 	public static const IMG_OFFSET_Y:int = 15;
 	
-	public static const BTN_OFFSET_X:int = 255;
-	public static const BTN_Y:int = 1250;
+	public static const BTN_OFFSET_X:int = 285;
+	public static const BTN_Y:int = 1210;
 	
 	override public function onEnter():void {
 		var img:ImageAA;
@@ -51,15 +51,17 @@ public class EntryPanel_B_StateAA extends StateAA
 		
 		
 		
-		node = this.getMorph().createSubMorph(new Img2_StateAA("entry/circle.png", "entry/B.png")).getNode();
+//		node = this.getMorph().createSubMorph(new Img2_StateAA("entry/circle.png", "entry/B.png")).getNode();
+		node = this.getMorph().createSubMorph(new Img1_StateAA("entry2/img_A.png")).getNode();
 		this.getFusion().addNode(node);
-		node.x = BTN_OFFSET_X;
+		node.x = this.getWindow().windowWidth - BTN_OFFSET_X;
 		node.y = BTN_Y;
 		node.eventClick().addListener(onClientB);
 		
-		node = this.getMorph().createSubMorph(new Img2_StateAA("entry/circle.png", "entry/A.png")).getNode();
+//		node = this.getMorph().createSubMorph(new Img2_StateAA("entry/circle.png", "entry/A.png")).getNode();
+		node = this.getMorph().createSubMorph(new Img1_StateAA("entry2/img_B.png")).getNode();
 		this.getFusion().addNode(node);
-		node.x = this.getWindow().windowWidth - BTN_OFFSET_X;
+		node.x = BTN_OFFSET_X;
 		node.y = BTN_Y;
 		node.eventClick().addListener(onClientA);
 		

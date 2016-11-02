@@ -16,6 +16,8 @@ package AA.entry
 public class EntryPanel_B_StateAA extends StateAA
 {
 	
+	public static const IMG_OFFSET_Y:int = 15;
+	
 	public static const BTN_OFFSET_X:int = 255;
 	public static const BTN_Y:int = 1250;
 	
@@ -35,17 +37,17 @@ public class EntryPanel_B_StateAA extends StateAA
 		this.getFusion().y = 270;
 		
 		
-		img = new ImageAA;
-		img.textureId = "entry/rect_A.png";
-		img.x = (this.getWindow().windowWidth - img.getSourceWidth())/2;
-		img.y = 750;
-		this.getFusion().addNode(img);
+//		img = new ImageAA;
+//		img.textureId = "entry/rect_A.png";
+//		img.x = (this.getWindow().windowWidth - img.getSourceWidth())/2;
+//		img.y = 750 + 0;
+//		this.getFusion().addNode(img);
 		
-		img = new ImageAA;
-		img.textureId = "entry/text_C.png";
-		img.x = (this.getWindow().windowWidth - img.getSourceWidth())/2;
-		img.y = 775;
-		this.getFusion().addNode(img);
+//		img = new ImageAA;
+//		img.textureId = "entry/text_C.png";
+//		img.x = (this.getWindow().windowWidth - img.getSourceWidth())/2;
+//		img.y = 775 + 0;
+//		this.getFusion().addNode(img);
 		
 		
 		
@@ -66,7 +68,7 @@ public class EntryPanel_B_StateAA extends StateAA
 		_installFN= new FusionAA;
 		this.getFusion().addNode(_installFN);
 		_installFN.x = this.getWindow().windowWidth/2;
-		_installFN.y = 1585;
+		_installFN.y = 1565;
 		
 		img = new ImageAA;
 		img.textureId = "entry/text_A.png";
